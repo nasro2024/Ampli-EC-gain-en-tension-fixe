@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur d'amplificateur Emetteur Commun</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculateur d'amplificateur Emetteur Commun pour un gain en tension Av voulu</h1>
+        <div class="settings">
+            <h2>Par Benahmed Nasreddine, Univ. Tlemcen, ALGERIE</h2>
+            <form id="settingsForm">
+                <label for="vcc">Tension d'alimentation (Vcc) :</label>
+                <input type="number" id="vcc" placeholder="Tension Vcc en volts">
+
+                <label for="beta">Gain en courant Beta du transistor :</label>
+                <input type="number" id="beta" placeholder="Coefficient beta">
+
+                <label for="icq">Courant de polarisation (Icq) :</label>
+                <input type="number" id="icq" placeholder="Courant Icq en amperes">
+
+                <label for="av">Gain en tension Av du transistor :</label>
+                <input type="number" id="av" placeholder="Gain en tension Av">
+
+                <label for="ce">Capacite interne Ce de l-emetteur du transistor :</label>
+                <input type="number" id="ce" placeholder="Capacite interne Ce en Farads">
+
+                <label for="amplitude">Amplitude du signal d'entree ve(t) :</label>
+                <input type="number" id="amplitude" placeholder="Amplitude Vemax en volts">
+
+                <label for="frequency">Frequence du signal d'entree ve(t) :</label>
+                <input type="number" id="frequency" placeholder="Frequence en Hertz">
+
+                <label for="vsSensitivity">Sensibilite du signal de sortie vs(t) :</label>
+                <input type="number" id="vsSensitivity" placeholder="Sensibilite de vs(t)">
+
+                <label for="veSensitivity">Sensibilite du signal d'entree ve(t) :</label>
+                <input type="number" id="veSensitivity" placeholder="Sensibilite de ve(t)">
+
+                <label for="horizontalSensitivity">Sensibilite horizontale :</label>
+                <input type="number" id="horizontalSensitivity" placeholder="Sensibilite horizontale">
+
+                <button type="button" id="calculateResistances">CALCULER</button>
+                <button type="button" id="resetFields">REINITIALISER</button>
+                <button type="button" id="adjustHorizontalSensitivity">AJUSTER SENSIBILITE HORIZONTALE</button>
+                <!-- <button type="button" id="drawBode">Tracé de Bode</button> Bouton pour le tracé de Bode -->
+            </form>
+        </div>
+        <div class="results" id="results"></div>
+        <canvas id="signalCanvas" width="800" height="400"></canvas>
+        <!-- <canvas id="bodeCanvas" width="800" height="400"></canvas> Balise canvas pour le tracé de Bode -->
+        <figure>
+            <figcaption>Figure</figcaption>
+            <img src="image.jpg" alt="Image jpg">
+        </figure>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
